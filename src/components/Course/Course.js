@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Course.css';
+import fackData from '../../fakeData/course';
+import CourseItem from '../CourseItem/CourseItem';
+import Purchase from '../Purchase/Purchase';
 
 
 
-const Course = (props) => {
-    const {name, price, image, trainer} = props.course;
+
+const Course = () => {
+    const [courses] = useState(fackData);
+    const [purchase, setPurchase] = useState([]);
+
+    const handleAddEnroll = (enroll) => {
+        const newPurchase = [...purchase, enroll];
+        setPurchase(newPurchase);
+    }
     
     return (
         <div className="course">
-            <div className="card mb-3" style={{maxwidth: "540px"}}>
-                <div className="row no-gutters">
-                    <div className="col-md-4 course-img">
-                        <img src={image} className="card-img" alt=""/>
-                    </div>
-                    <div className="col-md-8 course-text">
-                        <div className="card-body">
-                            <h5 className="card-title">{name}</h5>
-                            <p className="card-text">Trainer By: {trainer}</p>
-                            <h2>${price}</h2>
-                            <p className="card-text"><small className="text-muted"><button className="btn btn-outline-success my-2 my-sm-0" type="submit">Enroll Now</button></small></p>
-                        </div>
-                    </div>
-                </div>
+            <div >
+                {
+                    courses.map(courses => <CourseItem course={courses} handleAddEnroll={handleAddEnroll} key={courses.id}></CourseItem>)
+                }
             </div>
-
             <div>
-                <h1>time</h1>
+                <Purchase purchase={purchase}></Purchase>
             </div>
-        </div>
+        </div>    
+        
     );
 };
 
