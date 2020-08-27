@@ -1,0 +1,19 @@
+.course{
+    display: flex;
+}
+
+.card{
+    margin: 20px 25px 0px 72px;
+}
+.course-img{
+    overflow: hidden;
+    width: 291px;
+}
+.course-img img{
+    display: block;
+    width: 212px;
+    height: 168px;
+}
+.course-text{
+    width: 600px;
+}

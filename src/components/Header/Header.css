@@ -1,0 +1,31 @@
+
+.header{
+    text-align: center;
+}
+.header-text-area{
+    background-image: url(../../image/online-class.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.header-text{
+    top: 38%;
+    left: 35%;
+    position: absolute;
+    color: darkgoldenrod;
+    font-size: 68px;
+}
+.header nav{
+    margin-top: -18px;
+}
+.navbar{
+    padding-left: 68px;
+}
+.form-inline{
+    padding-left: 53%;
+}
+.form-control{
+    width: 50%;
+}
